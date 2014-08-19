@@ -7,7 +7,8 @@ class WrstartGenerator < Rails::Generators::Base
     remove_file "Gemfile"
     copy_file "Gemfile"
 
-    Bundler.with_clean_env do
+    # run "bundle"
+    inside Rails.root do
       run "bundle install"
     end
 
