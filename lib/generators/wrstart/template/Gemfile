@@ -75,8 +75,6 @@ gem 'validate_url'
 gem 'activerecord-session_store', '~> 0.1.0'
 
 gem 'kaminari', '0.16.1'
-gem 'forem', github: 'radar/forem', branch: 'rails4'
-gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
 
 group :test, :development do
   # specs
