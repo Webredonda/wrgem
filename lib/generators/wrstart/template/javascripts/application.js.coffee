@@ -41,7 +41,6 @@ ready = ->
   # Fastclick
   FastClick.attach document.body
 
-  $(window).resize(resize).resize()
 $(document).ready(ready)
 $(document).on('page:load', ready)
 
