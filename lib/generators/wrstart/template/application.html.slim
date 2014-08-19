@@ -1,0 +1,13 @@
+doctype 5
+html.no-js lang="#{I18n.locale}"
+
+  head
+    = stylesheet_link_tag 'application', media: 'all'
+    = render 'shared/head'
+
+  body class="#{yield (:body_class)}"
+    = yield
+    = javascript_include_tag 'application'
+    = render 'shared/footer'
+    = render 'shared/body_bottom'
+    = yield :bottom

@@ -40,7 +40,6 @@ class WrstartGenerator < Rails::Generators::Base
     end
 
 
-
     copy_file "better_errors.rb", "config/initializers/better_errors.rb"
 
     remove_dir "app/assets/javascripts"
@@ -55,30 +54,18 @@ class WrstartGenerator < Rails::Generators::Base
     remove_file "app/views/layouts/application.html.erb"
     copy_file "application.html.slim", "app/views/layouts/application.html.slim"
 
-    # copy_file "font-awesome.css", "app/assets/stylesheets/font-awesome.css"
+    directory "shared", "app/views/shared"
 
-    # directory 'fonts', 'app/assets/fonts'
+    remove_file "app/helpers/application_helper.rb"
+    copy_file "application_helper.rb", "app/helpers/application_helper.rb"
 
-    # remove_file "app/helpers/application_helper.rb"
-    # copy_file "application_helper.rb", "app/helpers/application_helper.rb"
+    run "rails g controller home index"
 
-    # copy_file "redactor-rails.css", "app/assets/stylesheets/redactor-rails.css"
+    remove_file "app/views/home/index.html.slim"
+    copy_file "index.html.slim", "app/views/home/index.html.slim"
 
-    # copy_file "layout.sass", "app/assets/stylesheets/layout.sass"
+    route "root 'home#index'"
 
-    # run "bower install bourbon"
-    # run "bower install animate.css"
-
-    # run "rails g controller home index"
-
-    # remove_file "app/views/home/index.html.slim"
-    # copy_file "index.html.slim", "app/views/home/index.html.slim"
-
-
-    # route "root 'home#index'"
-
-    # gsub_file 'config/environments/production.rb', 'config.serve_static_assets = false', 'config.serve_static_assets = true'
-    # gsub_file 'config/environments/production.rb', 'config.assets.compile = false', 'config.assets.compile = true'
 
   end
 
