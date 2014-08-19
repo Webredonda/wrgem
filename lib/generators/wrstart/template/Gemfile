@@ -22,9 +22,6 @@ gem 'sass-rails', '~> 4.0.1'
 gem 'coffee-rails', '~> 4.0.1'
 gem 'font-awesome-sass', '~> 4.1.0'
 
-# slim
-gem 'slim-rails', '~> 2.1.5'
-
 # forms
 gem 'simple_form', '~> 3.0.2'
 
@@ -101,3 +98,5 @@ group :test do
   # feature specs
   gem 'launchy',    '~> 2.4.2'
 end
+
+gem "wrgem"

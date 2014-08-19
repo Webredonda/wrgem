@@ -9,7 +9,7 @@ class WrstartGenerator < Rails::Generators::Base
 
     remove_file "Gemfile.lock"
 
-    run "bundle install"
+    run "bundle update"
 
     remove_file "config/database.yml"
     template "database.yml", "config/database.yml"
@@ -47,8 +47,11 @@ class WrstartGenerator < Rails::Generators::Base
     remove_dir "app/assets/javascripts"
     directory "javascripts", "app/assets/javascripts"
 
-    # remove_file "app/assets/stylesheets/application.css"
-    # copy_file "application.sass", "app/assets/stylesheets/application.sass"
+    remove_dir "app/assets/stylesheets"
+    directory "stylesheets", "app/assets/stylesheets"
+
+    remove_dir "vendor"
+    directory "vendor", "vendor"
 
     # copy_file "font-awesome.css", "app/assets/stylesheets/font-awesome.css"
 
