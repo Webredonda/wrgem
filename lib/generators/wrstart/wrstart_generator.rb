@@ -7,10 +7,9 @@ class WrstartGenerator < Rails::Generators::Base
     remove_file "Gemfile"
     copy_file "Gemfile"
 
-    run "bundle update"
-    # inside Rails.root do
-    #   run "bundle install"
-    # end
+    inside Rails.root do
+      run "bundle install"
+    end
 
     remove_file "config/database.yml"
     template "database.yml", "config/database.yml"
