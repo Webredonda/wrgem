@@ -7,7 +7,9 @@ class WrstartGenerator < Rails::Generators::Base
     remove_file "Gemfile"
     copy_file "Gemfile"
 
-    run "bundle"
+    Bundler.with_clean_env do
+      run "bundle install"
+    end
 
     remove_file "config/database.yml"
     template "database.yml", "config/database.yml"
@@ -43,7 +45,7 @@ class WrstartGenerator < Rails::Generators::Base
     copy_file "better_errors.rb", "config/initializers/better_errors.rb"
 
     remove_dir "app/assets/javascripts"
-    copy_dir "javascripts", "app/assets/javascripts"
+    directory "javascripts", "app/assets/javascripts"
 
     # remove_file "app/assets/stylesheets/application.css"
     # copy_file "application.sass", "app/assets/stylesheets/application.sass"
