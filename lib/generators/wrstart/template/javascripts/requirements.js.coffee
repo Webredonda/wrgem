@@ -25,10 +25,6 @@
 # -------------------------------------
 #= require jquery-autosize/jquery.autosize
 
-# -------------------------------------
-# forem (from gem)
-# -------------------------------------
-#= require forem
 
 # -------------------------------------
 # classlist.js (from vendor)
