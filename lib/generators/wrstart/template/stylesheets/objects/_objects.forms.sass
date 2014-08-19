@@ -1,0 +1,297 @@
+// *************************************
+//
+//   Form
+//
+// *************************************
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+$form-border: 1px solid #ccc !default
+$form-borderRadius: 2px !default
+$form-color: #444 !default
+$form-error-color: #d33434 !default
+$form-fontFamily: sans-serif !default
+$form-fontSize: 16px !default
+$form-highlight-color: #2db0cb !default
+$form-input-background: #fff !default
+$form-whitespace: 10px !default
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+.form
+  margin: 0 0 $form-whitespace 0
+
+
+textarea
+  max-width: 100%
+
+// -------------------------------------
+//   Submodules
+// -------------------------------------
+
+// ----- Row ----- //
+.form__row
+  position: relative
+  list-style-type: none
+  padding-bottom: ($form-whitespace / 2)
+  @include clearfix
+
+  &:last-child
+    padding-bottom: 0
+
+.form__footer
+  padding-top: $form-whitespace*2
+  text-align: center
+  @include font-weight(light)
+  font-size: 15px
+  color: #3b4358
+
+  a
+    @include font-weight(light)
+    color: #2db0cb
+
+// ----- Field ----- //
+.form__field
+  border: 0
+  margin: 0 0 $form-whitespace 0
+  padding: 0
+
+[data-behavior="remove"]
+  color: #fff
+  font-weight: bold
+  display: inline-block
+  background-color: rgba(#000, .7)
+  border-radius: 9999em
+  width: 18px
+  height: 18px
+  line-height: 14px
+  font-size: 16px
+  text-align: center
+  &:hover
+    background-color: #000
+
+// Modifiers
+.form__field--submit
+  margin-top: ($form-whitespace * 4)
+
+
+// ----- Header ----- //
+.form__header
+  margin-bottom: $form-whitespace
+
+
+// ----- Input ----- //
+.form__input
+  background: $form-input-background
+  border: $form-border
+  border-radius: $form-borderRadius
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  font-family: $form-fontFamily
+  font-size: $form-fontSize
+  padding: $form-whitespace
+  width: 100%
+
+  &:focus
+    border-color: $form-highlight-color
+    outline: 1px solid $form-highlight-color
+
+// ----- Textarea ----- //
+.form__textarea
+  background: $form-input-background
+  border: $form-border
+  border-radius: $form-borderRadius
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  font-family: $form-fontFamily
+  font-size: $form-fontSize
+  padding: $form-whitespace
+  width: 100%
+
+  &:focus
+    border-color: $form-highlight-color
+    outline: 1px solid $form-highlight-color
+
+// Modifiers
+.form__input--check,
+.form__input--radio
+  margin-right: $form-whitespace
+
+
+
+.form__input--radio--color-check
+  input[type="radio"]
+    display: none
+
+  label.radio
+    display: inline-table
+
+    width: 22px
+    height: 22px
+    margin-right: 5px
+    position: relative
+    font-size: 0px
+    border-radius: 2px
+    border: 1px solid white
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1)
+
+    &.is-active
+      padding: 1.5px
+      width: 25px
+      margin-top: -3px !important
+      box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.3)!important
+      text-align: center
+      &:before
+        display: table-footer-group
+        content: "\2713"
+        color: #f3f3f3
+        font-size: 12px
+
+
+
+
+// ----- Label ----- //
+.form__label
+  display: block
+  font-size: $form-fontSize
+  font-weight: bold
+  margin-bottom: 5px
+  em
+    color: $form-error-color
+
+// Modifiers
+.form__label--radio,
+.form__label--check
+  font-size: 90%
+  font-weight: normal
+
+
+
+// ----- Note ----- //
+.form__note
+  color: lighten($form-color, 40%)
+  font-size: 90%
+  margin-top: 5px
+
+
+// ----- Select ----- //
+.form__select
+
+select
+  width: 100%
+  border: 1px solid #ccc!important
+  border-radius: 1px
+
+fieldset
+  border: 0
+
+
+label.checkbox
+  display: block
+  font-size: 14px
+  font-weight: 500
+  input
+    width: auto
+    margin-right: 5px
+    &:focus
+      outline: 0
+
+
+.save-action
+  float: left
+.managers-action
+  margin-left: $inuit-base-spacing-unit--small
+.delete-action
+  float: right
+
+
+// ----- Errors ----- //
+span
+  &.error
+    color: $form-error-color
+    font-size: 13px
+    padding-top: 8px
+
+
+
+
+// $form-border-color: $base-border-color
+// $form-border-color-hover: darken($base-border-color, 10)
+// $form-border-color-focus: $base-accent-color
+// $form-border-radius: $base-border-radius
+// $form-box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.06)
+// $form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7)
+// $form-font-size: $base-font-size
+// $form-font-family: $base-font-family
+
+// fieldset
+//   background: lighten($base-border-color, 10)
+//   border: 1px solid $base-border-color
+//   margin: 0 0 $base-line-height / 2 0
+//   padding: $base-line-height
+
+// input,
+// label,
+// select
+//   display: block
+//   font-family: $form-font-family
+//   font-size: $form-font-size
+
+// label
+//   font-weight: bold
+//   margin-bottom: $base-line-height / 4
+//   &.required:after
+//     content: "*"
+//   abbr
+//     display: none
+
+// textarea,
+// #{$all-text-inputs},
+// select[multiple=multiple]
+//   +box-sizing(border-box)
+//   +transition(border-color)
+//   background-color: white
+//   border-radius: $form-border-radius
+//   border: 1px solid $form-border-color
+//   box-shadow: $form-box-shadow
+//   font-family: $form-font-family
+//   font-size: $form-font-size
+//   margin-bottom: $base-line-height / 2
+//   padding: $base-line-height / 3 $base-line-height / 3
+//   width: 100%
+//   &:hover
+//     border-color: $form-border-color-hover
+//   &:focus
+//     border-color: $form-border-color-focus
+//     box-shadow: $form-box-shadow-focus
+//     outline: none
+
+// textarea
+//   resize: vertical
+
+// input[type="search"]
+//   +appearance(none)
+
+// input[type="checkbox"], input[type="radio"]
+//   display: inline
+//   margin-right: $base-line-height / 4
+
+// input[type="file"]
+//   width: 100%
+
+// select
+//   width: auto
+//   margin-bottom: $base-line-height
+
+// button,
+// input[type="submit"]
+//   @extend %button
+//   +appearance(none)
+//   cursor: pointer
+//   user-select: none
+//   vertical-align: middle
+//   white-space: nowrap
