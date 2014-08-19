@@ -39,7 +39,7 @@ class WrstartGenerator < Rails::Generators::Base
       "
     end
 
-    # remove_file "app/views/layouts/application.html.erb"
+
 
     copy_file "better_errors.rb", "config/initializers/better_errors.rb"
 
@@ -51,6 +51,9 @@ class WrstartGenerator < Rails::Generators::Base
 
     remove_dir "vendor"
     directory "vendor", "vendor"
+
+    remove_file "app/views/layouts/application.html.erb"
+    copy_file "application.html.slim", "app/views/layouts/application.html.slim"
 
     # copy_file "font-awesome.css", "app/assets/stylesheets/font-awesome.css"
 
