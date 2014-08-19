@@ -19,7 +19,6 @@ class WrstartGenerator < Rails::Generators::Base
     run "rails g start:heroku"
     run "rails g start:heroku_wake_up"
     run "rails g start:locales"
-    run "rails g start:slim"
     run "rails g start:spec_helpers"
     run "rails g start:unicorn"
 
