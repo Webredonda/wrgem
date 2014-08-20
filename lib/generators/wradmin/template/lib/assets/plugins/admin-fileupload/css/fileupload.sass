@@ -1,0 +1,157 @@
+#fileupload
+  input[type="file"]
+    width: 100%
+    min-height: 130px
+    background: #fff
+    padding: 23px
+    position: relative
+    border: 1px solid rgba(0, 0, 0, 0.08)
+    background: rgba(0, 0, 0, 0.02)
+    padding: 1em
+    &::before
+      content: ""
+      border: none
+      opacity: 1
+      -ms-filter: none
+      filter: none
+      @extend .transition-ease-in-out
+      background-image: url("../images/spritemap.png")
+      background-repeat: no-repeat
+      background-position: 0 0
+      position: absolute
+      width: 428px
+      height: 123px
+      margin-left: -214px
+      margin-top: -61.5px
+      top: 50%
+      left: 50%
+
+ul#galleries
+  li
+    background: rgba(255, 255, 255, 0.8)
+    position: relative
+    display: inline-block
+    margin: 17px
+    vertical-align: top
+    border: 1px solid #acacac
+    padding: 6px
+    -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.16)
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.16)
+    font-size: 14px
+    .details
+      .image
+        width: 280px
+        height: 280px
+        position: relative
+        background-color: #ebebeb
+        background-image: url("loading.gif")
+        background-position: center
+        background-size: 25px
+        background-repeat: no-repeat
+        margin-bottom: 22px
+        span
+          display: block
+          position: absolute
+          width: 100%
+          text-align: center
+          top: calc(50% + 25px)
+          font-weight: 600
+        img
+          position: absolute
+          top: 0
+          left: 0
+          width: 280px
+          height: 280px
+      .filename
+        text-align: center
+    .bar
+      position: absolute
+      top: 288px
+      left: 6px
+      right: 6px
+      height: 6px
+      background: #d7d7d7
+      display: block
+      .upload
+        display: block
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        width: 0%
+      &.success
+        background-color: #8cc657
+      &.error
+        background: #ee1e2d
+      &.progress
+        .upload
+          -webkit-animation: loading 0.4s linear infinite
+          -moz-animation: loading 0.4s linear infinite
+          -o-animation: loading 0.4s linear infinite
+          -ms-animation: loading 0.4s linear infinite
+          animation: loading 0.4s linear infinite
+          -webkit-transition: width 0.3s ease-in-out
+          -moz-transition: width 0.3s ease-in-out
+          -o-transition: width 0.3s ease-in-out
+          -ms-transition: width 0.3s ease-in-out
+          transition: width 0.3s ease-in-out
+          -webkit-border-radius: 2px
+          border-radius: 2px
+          position: absolute
+          top: 0
+          left: 0
+          width: 0%
+          height: 100%
+          background-image: url("../images/spritemap.png")
+          background-repeat: repeat-x
+          background-position: 0px -400px
+          background-color: #8cc657
+    .delete-file
+      position: absolute
+      width: 40px
+      height: 40px
+      font-size: 30px
+      text-align: center
+      right: -10px
+      top: -10px
+      color: #ee162d
+
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+      filter: alpha(opacity = 0)
+      -webkit-transition: opacity 0.4s ease-in-out
+      -moz-transition: opacity 0.4s ease-in-out
+      -o-transition: opacity 0.4s ease-in-out
+      -ms-transition: opacity 0.4s ease-in-out
+      transition: opacity 0.4s ease-in-out
+      background-image: url("../images/spritemap.png")
+      background-repeat: no-repeat
+      background-position: -268px -123px
+
+
+
+
+@-moz-keyframes loading
+  0%
+    background-position: 0 -400px
+  100%
+    background-position: -7px -400px
+@-webkit-keyframes loading
+  0%
+    background-position: 0 -400px
+  100%
+    background-position: -7px -400px
+@-o-keyframes loading
+  0%
+    background-position: 0 -400px
+  100%
+    background-position: -7px -400px
+@-ms-keyframes loading
+  0%
+    background-position: 0 -400px
+  100%
+    background-position: -7px -400px
+@keyframes loading
+  0%
+    background-position: 0 -400px
+  100%
+    background-position: -7px -400px

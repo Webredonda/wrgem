@@ -1,0 +1,30 @@
+= simple_form_for(@<%= singular_table_name %>) do |f|
+  = f.error_notification
+
+<%- attributes.each do |attribute| -%>
+  .form-group
+    = f.label "<%= attribute.name %>", class: "col-sm-3 control-label"
+    .col-sm-9
+<%- if attribute.type.to_s == "text" -%>
+      = f.text_area :<%= attribute.name %>, class: "form-control redactor", label: false
+<%- elsif attribute.type.to_s == "date" -%>
+      = f.text_field :<%= attribute.name %>, class: "form-control default-date-picker parsley-validated", required: true, label: false if @<%= singular_table_name %>.<%= attribute.name %>.blank?
+      - if @<%= singular_table_name %>.<%= attribute.name %>.present?
+        = f.text_field :<%= attribute.name %>, class: "form-control default-date-picker parsley-validated", required: true, label: false, :value => @<%= singular_table_name %>.<%= attribute.name %>.strftime("%d/%m/%Y")
+<%- elsif attribute.name.match("image") || attribute.name.match("img") || attribute.name.match("avatar") -%>
+      = f.input :<%= attribute.name %>, input_html: {class: "form-control parsley-validated"},label: false, required: true if @<%= singular_table_name %>.<%= attribute.name %>.blank?
+      - if @<%= singular_table_name %>.<%= attribute.name %>.present?
+        = f.input :<%= attribute.name %>, input_html: {class: "form-control parsley-validated"},label: false
+        = link_to image_path(@<%= singular_table_name %>.<%= attribute.name %>), :'data-lightbox' => "example-set" do
+          = image_tag(@<%= singular_table_name %>.<%= attribute.name %>.admin)
+<%- else -%>
+      = f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %>, input_html: {class: "form-control parsley-validated"}, required: true, label: false
+<%- end -%>
+<%- end -%>
+
+
+  .form-actions
+    .row
+      .col-sm-9.col-sm-offset-3
+        .btn-toolbar
+          = f.button :submit, class: "btn-primary btn", onclick: "javascript:$('form').parsley( 'validate' )"

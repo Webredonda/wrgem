@@ -1,0 +1,42 @@
+.row
+  .col-md-12
+    .page-heading.clearfix
+      h1.pull-left Contatos
+      = link_to 'Novo Contato', new_admin_contact_path, class: "btn-default btn pull-right"
+
+    - if notice.present?
+      hr
+      .alert.alert-success.col-md-12
+        span.alert-icon
+          i.fa.fa-check
+        .notification-info
+          p = notice
+
+.box-info.col-md-12
+  h3 Listagem
+  hr
+
+  .adv-table
+    table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered table-striped dataTable" id="dynamic-table_info  "
+      thead
+        tr
+          th width="80"
+          th Nome
+          th Email
+          th Assunto
+          th Ações
+      tbody
+        - @admin_contacts.each_with_index do |admin_contact, index|
+          tr
+            td = index + 1
+            td = admin_contact.name
+            td = admin_contact.email
+            td = admin_contact.subject
+            td width="180"
+              .btn-group.btn-group-sm.pull-right
+                = link_to edit_admin_contact_path(admin_contact), class: " btn btn-white" do
+                  i.fa.fa-pencil-square-o
+                  |  Editar
+                = link_to admin_contact, data: {:confirm => 'Tem certeza que deseja apagar?'}, :method => :delete, class: " btn btn-white" do
+                  i.fa.fa-trash-o
+                  |  Excluir

@@ -1,0 +1,12 @@
+= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {class: "login-form-signin"}) do |f|
+  .login-logo
+    = image_tag("logo.png")
+
+  h2.login-form-signin-heading Logar na sua conta
+  .login-wrap
+    = f.input :email, :required => false, :autofocus => true, :label => false, placeholder: "E-mail", :input_html => {class: "form-control"}
+    = f.input :password, :required => false, :label => false, placeholder: "Senha", :input_html => {class: "form-control"}
+    = f.input :remember_me, :as => :boolean, label: "Lembrar-me" if devise_mapping.rememberable?
+    = f.button :submit, "Login", class: "btn btn-lg btn-primary btn-block"
+    .registration
+      = render "users/shared/links"

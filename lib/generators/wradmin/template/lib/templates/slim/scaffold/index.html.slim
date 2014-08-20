@@ -1,0 +1,42 @@
+.row
+  .col-md-12
+    .page-heading.clearfix
+      h1.pull-left <%= plural_table_name %>
+      = link_to 'Novo <%= human_name %>', new_<%= singular_table_name %>_path, class: "btn-default btn pull-right"
+
+    - if notice.present?
+      hr
+      .alert.alert-success.col-md-12
+        span.alert-icon
+          i.fa.fa-check
+        .notification-info
+          p = notice
+
+.box-info.col-md-12
+  h3 Listagem
+  hr
+
+  .adv-table
+    table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered table-striped dataTable" id="dynamic-table_info  "
+      thead
+        tr
+          th width="80"
+<% attributes.each do |attribute| -%>
+          th <%= attribute.human_name %>
+<% end -%>
+          th Ações
+      tbody
+        - @<%= plural_table_name %>.each_with_index do |<%= singular_table_name %>, index|
+          tr
+            td = index + 1
+<% attributes.each do |attribute| -%>
+            td = <%= singular_table_name %>.<%= attribute.name %>
+<% end -%>
+            td width="180"
+              .btn-group.btn-group-sm.pull-right
+                = link_to edit_<%= singular_table_name %>_path(<%= singular_table_name %>), class: " btn btn-white" do
+                  i.fa.fa-pencil-square-o
+                  |  Editar
+                = link_to <%= singular_table_name %>, data: {:confirm => 'Tem certeza que deseja apagar?'}, :method => :delete, class: " btn btn-white" do
+                  i.fa.fa-trash-o
+                  |  Excluir

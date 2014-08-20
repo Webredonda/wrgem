@@ -1,0 +1,229 @@
+#nav
+  .profile
+    .logo
+      = link_to admin_path
+        = image_tag("logo.png")
+  ul.navigation
+    li
+      = link_to admin_path, class: "active"
+        i.fa.fa-home
+        span Dashboard
+
+    // MODULOS ADMIN
+    li.sub
+      = link_to admin_users_path do
+        i.fa.fa-user
+        span Administradores
+      ul.navigation-sub
+        li
+          = link_to admin_users_path do
+            i.fa.fa-list-ul
+            span Listar
+        li
+          = link_to new_admin_user_path do
+            i.fa.fa-plus-circle
+            span Cadastar
+
+    / li.sub
+    /   = link_to admin_banners_path do
+    /     i.fa.fa-bookmark
+    /     span Banners
+    /   ul.navigation-sub
+    /     li
+    /       = link_to admin_banners_path do
+    /         i.fa.fa-list-ul
+    /         span Listar
+    /     li
+    /       = link_to new_admin_banner_path do
+    /         i.fa.fa-plus-circle
+    /         span Banner com vídeo
+    /     li
+    /       = link_to sem_video_path do
+    /         i.fa.fa-plus-circle
+    /         span Banner sem vídeo
+
+    / li.sub
+    /   = link_to admin_programs_path do
+    /     i.fa.fa-play-circle
+    /     span Programas
+    /   ul.navigation-sub
+    /     li
+    /       = link_to admin_programs_path do
+    /         i.fa.fa-list-ul
+    /         span Listar
+    /     li
+    /       = link_to new_admin_program_path do
+    /         i.fa.fa-plus-circle
+    /         span Cadastar
+
+    / li.sub
+    /   = link_to admin_frames_path do
+    /     i.fa.fa-sitemap
+    /     span Quadros
+    /   ul.navigation-sub
+    /     li
+    /       = link_to admin_frames_path do
+    /         i.fa.fa-list-ul
+    /         span Listar
+    /     li
+    /       = link_to new_admin_frame_path do
+    /         i.fa.fa-plus-circle
+    /         span Cadastar
+
+    / li.sub
+    /   = link_to admin_backstages_path do
+    /     i.fa.fa-video-camera
+    /     span Bastidores
+    /   ul.navigation-sub
+    /     li
+    /       = link_to admin_backstages_path do
+    /         i.fa.fa-list-ul
+    /         span Listar
+    /     li
+    /       = link_to new_admin_backstage_path do
+    /         i.fa.fa-plus-circle
+    /         span Cadastar
+
+    / li.sub
+    /   = link_to admin_articles_path do
+    /     i.fa.fa-rss
+    /     span Notícias
+    /   ul.navigation-sub
+    /     li
+    /       = link_to admin_articles_path do
+    /         i.fa.fa-list-ul
+    /         span Listar
+    /     li
+    /       = link_to new_admin_article_path do
+    /         i.fa.fa-plus-circle
+    /         span Cadastar
+
+    li.sub
+      = link_to admin_posts_path do
+        i.fa.fa-book
+        span Blog
+      ul.navigation-sub
+        li
+          = link_to admin_posts_path do
+            i.fa.fa-list-ul
+            span Listar Post
+        li
+          = link_to new_admin_post_path do
+            i.fa.fa-plus-circle
+            span Cadastar Post
+        li
+          = link_to new_admin_post_category_path do
+            i.fa.fa-sitemap
+            span Cadastar Categoria
+
+
+
+
+    / li.sub
+    /   = link_to admin_partners_path do
+    /     i.fa.fa-users
+    /     span Parceiros
+    /   ul.navigation-sub
+    /     li
+    /       = link_to admin_partners_path do
+    /         i.fa.fa-list-ul
+    /         span Listar
+    /     li
+    /       = link_to new_admin_partner_path do
+    /         i.fa.fa-plus-circle
+    /         span Cadastar
+
+    li.sub
+      = link_to admin_clients_path do
+        i.fa.fa-briefcase
+        span Clientes
+      ul.navigation-sub
+        li
+          = link_to admin_clients_path do
+            i.fa.fa-list-ul
+            span Listar
+        li
+          = link_to new_admin_client_path do
+            i.fa.fa-plus-circle
+            span Cadastar
+
+    li.sub
+      = link_to admin_contacts_path do
+        i.fa.fa-envelope
+        span Contatos
+      ul.navigation-sub
+        li
+          = link_to admin_contacts_path do
+            i.fa.fa-list-ul
+            span Listar
+        li
+          = link_to new_admin_contact_path do
+            i.fa.fa-plus-circle
+            span Cadastar
+
+    li.sub
+      = link_to admin_newsletters_path do
+        i.fa.fa-list
+        span Newsletter
+      ul.navigation-sub
+        li
+          = link_to admin_newsletters_path do
+            i.fa.fa-list-ul
+            span Listar
+        li
+          = link_to new_admin_newsletter_path do
+            i.fa.fa-plus-circle
+            span Cadastar
+
+    li.sub
+      =link_to admin_budgets_path do
+        i.fa.fa-dollar
+        span Orçamento
+      ul.navigation-sub
+        li
+          =link_to admin_budgets_path do
+            i.fa.fa-list-ul
+            span Listar
+        li
+          =link_to new_admin_budget_path do
+            i.fa.fa-plus-circle
+            span Cadastar
+
+
+    li.sub
+      =link_to admin_portfolios_path do
+        i.fa.fa-suitcase
+        span Portifolio
+      ul.navigation-sub
+        li
+          =link_to admin_portfolios_path do
+            i.fa.fa-list-ul
+            span Listar Portifolio
+        li
+          =link_to new_admin_portfolio_path do
+            i.fa.fa-plus-circle
+            span Cadastar Portifolio
+        li
+          =link_to new_admin_portfolio_result_path do
+            i.fa.fa-cogs
+            span Cadastar Resultados
+
+
+
+
+
+    / li.sub
+    /   = link_to admin_advertisements_path do
+    /     i.fa.fa-bullhorn
+    /     span Publicidades
+    /   ul.navigation-sub
+    /     li
+    /       = link_to admin_advertisements_path do
+    /         i.fa.fa-list-ul
+    /         span Listar
+    /     li
+    /       = link_to new_admin_advertisement_path do
+    /         i.fa.fa-plus-circle
+    /         span Cadastar
+
+

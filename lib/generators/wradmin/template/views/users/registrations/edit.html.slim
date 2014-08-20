@@ -1,0 +1,141 @@
+.row
+  .col-md-12
+    .page-heading
+      h1 Perfil
+.row
+  == render 'panel_profile'
+
+  .profile-info.col-lg-9
+    .panel
+      .bio-graph-heading
+        = current_user.about
+      .panel-body.bio-graph-info
+        h1 Informações do Perfil
+
+        = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, class: "form-horizontal" }) do |f|
+          = f.error_notification
+
+          .form-group
+            = f.label "Nome", class: "col-lg-2 control-label"
+            .col-lg-6
+              = f.input :name, input_html: {class: "form-control"}, required: true, label: false
+
+          .form-group
+            = f.label "Sobrenome", class: "col-lg-2 control-label"
+            .col-lg-6
+              = f.input :surname, input_html: {class: "form-control"}, required: true, label: false
+
+          .form-group
+            = f.label "E-mail", class: "col-lg-2 control-label"
+            .col-lg-6
+              = f.input :email, input_html: {class: "form-control"}, required: true, label: false
+
+
+          .form-group
+            = f.label "Avatar", class: "col-lg-2 control-label"
+            .col-sm-6
+              = f.input :avatar, input_html: {class: "form-control"},required: false, label: false
+
+          .form-group
+            = f.label "Aniversário", class: "col-lg-2 control-label"
+            .col-lg-6
+              = f.text_field :birthday, class: "form-control", required: true, label: false, :value => current_user.birthday.strftime("%d/%m/%Y")
+
+          .form-group
+            = f.label "Ocupação", class: "col-lg-2 control-label"
+            .col-lg-6
+              = f.input :ocupation, input_html: {class: "form-control"}, required: true, label: false
+
+          .form-group
+            = f.label "Telefone", class: "col-lg-2 control-label"
+            .col-lg-6
+              = f.input :phone, input_html: {class: "form-control"}, required: true, label: false
+
+          .form-group
+            = f.label "Sobre", class: "col-lg-2 control-label"
+            .col-lg-6
+              = f.input :about, input_html: {class: "form-control"}, required: true, label: false
+
+          h2 Alteração de senha
+          .box-password
+            .form-group
+              = f.label "Nova senha", class: "col-lg-2 control-label"
+              .col-lg-6
+                = f.input :password, input_html: {class: "form-control"}, autocomplete: "off", hint: "Deixe em branco caso não queira alterar", required: false, label: false
+
+            .form-group
+              = f.label "Confirmação da Senha", class: "col-lg-2 control-label"
+              .col-lg-6
+                = f.input :password_confirmation, input_html: {class: "form-control"}, required: false, label: false
+
+          .form-group
+            = f.label "Senha Atual", class: "col-lg-2 control-label"
+            .col-lg-6
+              = f.input :current_password, input_html: {class: "form-control"}, :hint => "Precisamos da sua senha atual para confirmar suas modificações", required: true, label: false
+
+
+
+
+
+          .form-group
+            .col-lg-offset-2.col-lg-10
+              = f.button :submit, class: "btn-danger btn", onclick: "javascript:$('form').parsley( 'validate' )"
+              button.btn.btn-default type="button"  Cancel
+
+// encrypted_password
+
+
+
+
+
+//
+  .row
+    .col-md-12
+      .page-heading.clearfix
+        h1.pull-left Usuario
+        .btn-group.pull-right
+          = link_to 'Voltar', admin_users_path, class: "btn btn-default"
+
+  .row
+    .col-md-6
+      .box-info
+        h3 Editar
+        hr
+        .form-horizontal.row-border
+          == render 'form'
+
+    .col-md-6
+      .box-info
+        section.container_novidades_interna
+          //== render 'partials/novidades_interna'
+
+
+
+//
+  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+  <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :email, :required => true, :autofocus => true %>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <% end %>
+
+      <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
+      <%= f.input :password_confirmation, :required => false %>
+      <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Update" %>
+    </div>
+  <% end %>
+
+  <h3>Cancel my account</h3>
+
+  <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+
+  <%= link_to "Back", :back %>

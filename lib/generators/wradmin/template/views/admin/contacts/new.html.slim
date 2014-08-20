@@ -1,0 +1,13 @@
+.row
+  .col-md-12
+    .page-heading.clearfix
+      h1.pull-left Contato
+      = link_to 'Voltar', admin_contacts_path, class: "btn-default btn pull-right"
+
+.row
+  .col-md-12
+    .box-info
+      h3 Cadastro
+      hr
+      .form-horizontal.row-border
+        == render 'form'

@@ -1,0 +1,16 @@
+.profile-nav.col-lg-3
+    .panel
+      .user-heading.round
+        a href="#"
+          = image_tag(current_user.avatar.profile)
+          h1 = current_user.name + " " + current_user.surname
+        p = current_user.email
+      ul.nav.nav-pills.nav-stacked
+        li.active
+          = link_to admin_user_path(current_user)
+            i.icon-user
+            | Perfil
+        li
+          = link_to edit_user_registration_path
+            i.icon-edit
+            | Editar Perfil

@@ -1,0 +1,45 @@
+.row
+  .col-md-12
+    .page-heading
+      h1 Perfil
+.row
+  == render 'panel_profile'
+
+  .profile-info.col-lg-9
+    .panel
+      .bio-graph-heading = @admin_user.about
+      .panel-body.bio-graph-info
+        h1 Bio
+        .row
+          .bio-row
+            p
+              span Nome
+              | : #{@admin_user.name}
+          .bio-row
+            p
+              span Sobrenome
+              | : #{@admin_user.surname}
+          .bio-row
+            p
+              span País
+              | : Brasil
+          .bio-row
+            p
+              span Aniversário
+              | : #{l @admin_user.birthday}
+          .bio-row
+            p
+              span Ocupação
+              | : #{@admin_user.ocupation}
+          .bio-row
+            p
+              span Email
+              | : #{@admin_user.email}
+          .bio-row
+            p
+              span Phone
+              | : #{@admin_user.phone}
+          .bio-row
+            p
+              span Administrador
+              | : #{@admin_user.autorization}

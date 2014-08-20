@@ -1,0 +1,15 @@
+.row
+  .col-md-12
+    .page-heading.clearfix
+      h1.pull-left admin_contact
+      .btn-group.pull-right
+        = link_to 'Voltar', admin_contacts_path, class: "btn btn-default"
+        = link_to 'Editar', edit_admin_contact_path(@admin_contact), class: "btn btn-default"
+
+.row
+  .col-md-6
+    .box-info
+      h3 Visualização
+      hr
+
+      == render 'contato_mailer/contato_mailer'

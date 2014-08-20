@@ -1,0 +1,26 @@
+.row
+  .col-md-12
+    .page-heading.clearfix
+      h1.pull-left Contato
+      .btn-group.pull-right
+        = link_to 'Voltar', admin_contacts_path, class: "btn btn-default"
+
+.row
+  .col-md-9
+    .box-info
+      h3 Editar
+      hr
+      .form-horizontal.row-border
+        == render 'form'
+
+  .col-md-3
+    .box-info
+      h3 Editados recentemente
+      hr
+
+      table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered table-striped dataTable" id="dynamic-table_info  "
+        - @admin_contacts.each do |admin_contact|
+          tr
+            td
+              = link_to edit_admin_contact_path(admin_contact) do
+                = admin_contact.email

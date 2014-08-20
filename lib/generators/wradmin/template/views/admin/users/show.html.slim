@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @admin_tip.title
+p
+  strong Image:
+  = @admin_tip.image
+p
+  strong Body:
+  = @admin_tip.body
+p
+  strong Published at:
+  = @admin_tip.published_at
+p
+  strong Category tip:
+  = @admin_tip.category_tip_id
+p
+  strong Slug:
+  = @admin_tip.slug
+
+= link_to 'Edit', edit_admin_tip_path(@admin_tip)
+'|
+= link_to 'Back', admin_tips_path

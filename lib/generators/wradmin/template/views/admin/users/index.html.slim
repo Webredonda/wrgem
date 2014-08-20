@@ -1,0 +1,50 @@
+.row
+  .col-md-12
+    .page-heading.clearfix
+      h1.pull-left Usuarios
+      - if current_user.autorization == true
+        = link_to 'Novo Usuario', new_admin_user_path, class: "btn-default btn pull-right"
+
+
+
+.box-info.col-md-12
+  h3 Listagem
+  hr
+
+  .adv-table
+    table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered table-striped dataTable" id="dynamic-table_info  "
+      thead
+        tr
+          th width="80"
+          th Nome
+          th E-mail
+          th Avatar
+          th Ocupação
+          th Administrador
+          - if current_user.autorization == true
+            th Ações
+      tbody
+        - @admin_users.each do |admin_user|
+          tr
+            td
+              = link_to admin_user, class: "btn btn-white" do
+                i.fa.fa-eye
+            td = admin_user.name + " " + admin_user.surname
+            td = admin_user.email
+            td = image_tag(admin_user.avatar.admin)
+            td = admin_user.ocupation
+            - if admin_user.autorization == true
+              td
+                i.fa.fa-check
+            - else
+              td
+                i.fa.fa-times
+            - if current_user.autorization == true
+              td width="180"
+                .btn-group.btn-group-sm.pull-right
+                  = link_to edit_admin_user_path(admin_user), class: " btn btn-white" do
+                    i.fa.fa-pencil-square-o
+                    |  Editar
+                  = link_to admin_user, data: {:confirm => 'Tem certeza que deseja apagar?'}, :method => :delete, class: " btn btn-white" do
+                    i.fa.fa-trash-o
+                    |  Excluir

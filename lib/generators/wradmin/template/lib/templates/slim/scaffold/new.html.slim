@@ -1,0 +1,13 @@
+.row
+  .col-md-12
+    .page-heading.clearfix
+      h1.pull-left <%= singular_table_name %>
+      = link_to 'Voltar', <%= plural_table_name %>_path, class: "btn-default btn pull-right"
+
+.row
+  .col-md-12
+    .box-info
+      h3 Cadastro
+      hr
+      .form-horizontal.row-border
+        == render 'form'

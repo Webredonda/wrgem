@@ -1,0 +1,26 @@
+.row
+  .col-md-12
+    .page-heading.clearfix
+      h1.pull-left <%= singular_table_name %>
+      .btn-group.pull-right
+        = link_to 'Voltar', <%= plural_table_name %>_path, class: "btn btn-default"
+
+.row
+  .col-md-9
+    .box-info
+      h3 Editar
+      hr
+      .form-horizontal.row-border
+        == render 'form'
+
+  .col-md-3
+    .box-info
+      h3 Editados recentemente
+      hr
+
+      table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered table-striped dataTable" id="dynamic-table_info  "
+        - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
+          tr
+            td
+              = link_to edit_<%= singular_table_name %>_path(<%= singular_table_name %>) do
+                = <%= singular_table_name %>.<%= attributes[0].name %>

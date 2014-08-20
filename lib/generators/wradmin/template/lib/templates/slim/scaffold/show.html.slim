@@ -1,0 +1,13 @@
+.row
+  .col-md-12
+    .page-heading.clearfix
+      h1.pull-left <%= singular_table_name %>
+      .btn-group.pull-right
+        = link_to 'Voltar', <%= plural_table_name %>_path, class: "btn btn-default"
+        = link_to 'Editar', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: "btn btn-default"
+
+.row
+  .col-md-6
+    .box-info
+      h3 Visualização
+      hr
