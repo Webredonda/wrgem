@@ -7,7 +7,7 @@ class WradminGenerator < Rails::Generators::Base
     # INSTALANDO AS GEMS
     run "rails generate devise:install"
     run "rails generate simple_form:install"
-    run "rails generate redactor:install --devise"
+    #run "rails generate redactor:install --devise"
 
     # INCLUINDO ARQUIVOS DA PASTA LIB
     remove_dir "lib"
