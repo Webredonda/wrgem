@@ -91,4 +91,6 @@ group :test do
   gem 'launchy',    '~> 2.4.2'
 end
 
-gem "wrgem"
+
+gem 'redactor-rails', '~> 0.4.5'
+gem 'wrgem'

@@ -4,10 +4,6 @@ class WradminGenerator < Rails::Generators::Base
 
   def generate_wradmin
 
-    # INCLUINDO A GEM
-    gemfile "gem 'redactor-rails', '~> 0.4.5'"
-    run "bundle update"
-
     # INSTALANDO AS GEMS
     run "rails generate devise:install"
     run "rails generate simple_form:install"
