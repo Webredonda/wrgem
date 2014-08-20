@@ -6,6 +6,7 @@ class WradminGenerator < Rails::Generators::Base
 
     # INCLUINDO A GEM
     gemfile "gem 'redactor-rails', '~> 0.4.5'"
+    run "bundle update"
 
     # INSTALANDO AS GEMS
     run "rails generate devise:install"
