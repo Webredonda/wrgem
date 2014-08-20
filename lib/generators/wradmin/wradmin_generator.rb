@@ -45,11 +45,17 @@ class WradminGenerator < Rails::Generators::Base
     # COPIANDO AS IMAGENS DA PASTA PUBLIC
     directory "public/images", "public/images"
     directory "public/img", "public/img"
+
+    remove_file "public/favicon.ico"
     copy_file "public/favicon.ico", "public/favicon.ico"
 
 
     # COPIANDO OS UPLOADERS
-    directory "uploaders", "app/uploaders"
+    # directory "uploaders", "app/uploaders"
+    copy_file "app/uploaders/avatar_user_uploader.rb", "app/uploaders/avatar_user_uploader.rb"
+
+
+
 
     # ADICIONANDO A ROTA
     route "
