@@ -16,7 +16,7 @@ class WradminGenerator < Rails::Generators::Base
     # COPIANDO AS VIEWS
     directory "views/admin", "app/views/admin"
     directory "views/layouts", "app/views/layouts"
-    directory "views/user", "app/views/user"
+    directory "views/users", "app/views/users"
 
     # COPIANDO OS ASSETS (javascripts e  stylesheets)
     directory "assets/javascripts", "app/assets/javascripts"
