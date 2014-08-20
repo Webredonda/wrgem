@@ -52,9 +52,7 @@ class WradminGenerator < Rails::Generators::Base
     directory "uploaders", "app/uploaders"
 
     # ADICIONANDO A ROTA
-    route do
-      "
-
+    route "
         devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations', passwords: 'users/passwords' }
 
         get 'admin/users/new' => 'admin/users#new'
@@ -71,7 +69,6 @@ class WradminGenerator < Rails::Generators::Base
         resources :contacts
         end
       "
-    end
 
     # RODANDO AS MIGRATES
     run "rake db:migrate"
