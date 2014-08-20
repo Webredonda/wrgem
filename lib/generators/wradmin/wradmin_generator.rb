@@ -39,8 +39,8 @@ class WradminGenerator < Rails::Generators::Base
 
     # COPIANDO OS MODELS
     directory "models/admin", "app/models/admin"
-    copy_file "models/admin/admin.rb", "app/models/admin/admin.rb"
-    copy_file "models/admin/user.rb", "app/models/admin/user.rb"
+    copy_file "models/admin.rb", "app/models/admin.rb"
+    copy_file "models/user.rb", "app/models/user.rb"
 
     # COPIANDO AS IMAGENS DA PASTA PUBLIC
     directory "public/images", "public/images"
