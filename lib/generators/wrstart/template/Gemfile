@@ -93,4 +93,11 @@ end
 
 
 gem 'redactor-rails', '~> 0.4.5'
+
+gem 'mini_magick', '~> 3.7.0'
+gem 'carrierwave', '~> 0.10.0'
+gem 'fog', '~> 1.22.0'
+gem 'roadie', '~> 2.4.3'
+gem 'remotipart', '~> 1.2'
+
 gem 'wrgem'

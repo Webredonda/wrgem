@@ -53,22 +53,22 @@ class WradminGenerator < Rails::Generators::Base
 
     # ADICIONANDO A ROTA
     route "
-        devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations', passwords: 'users/passwords' }
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations', passwords: 'users/passwords' }
 
-        get 'admin/users/new' => 'admin/users#new'
-        get 'admin/users/:id' => 'admin/users#view'
-        get 'admin/users/:id/edit' => 'admin/users#edit'
+  get 'admin/users/new' => 'admin/users#new'
+  get 'admin/users/:id' => 'admin/users#view'
+  get 'admin/users/:id/edit' => 'admin/users#edit'
 
-        devise_scope :user do
-        get 'logout' => 'users/sessions#destroy'
-        post 'logout' => 'users/sessions#destroy'
-        end
+  devise_scope :user do
+  get 'logout' => 'users/sessions#destroy'
+  post 'logout' => 'users/sessions#destroy'
+  end
 
-        namespace :admin do
-        resources :users
-        resources :contacts
-        end
-      "
+  namespace :admin do
+  resources :users
+  resources :contacts
+  end
+  "
 
     # RODANDO AS MIGRATES
     run "rake db:migrate"

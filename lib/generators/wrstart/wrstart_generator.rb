@@ -24,18 +24,17 @@ class WrstartGenerator < Rails::Generators::Base
 
     application do
      "
+    Rails.application.assets.register_engine('.slim', Slim::Template)
+    Slim::Engine.set_default_options format: :html5
+    config.i18n.default_locale = 'pt-BR'
+    config.time_zone = 'Brasilia'
 
-      Rails.application.assets.register_engine('.slim', Slim::Template)
-      Slim::Engine.set_default_options format: :html5
-      config.i18n.default_locale = 'pt-BR'
-      config.time_zone = 'Brasilia'
-
-      config.generators do |g|
-        g.assets            false
-        g.helper            false
-        g.test_framework    nil
-        g.jbuilder          false
-      end
+    config.generators do |g|
+      g.assets            false
+      g.helper            false
+      g.test_framework    nil
+      g.jbuilder          false
+    end
       "
     end
 
