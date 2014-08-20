@@ -52,7 +52,7 @@ class WradminGenerator < Rails::Generators::Base
 
     # COPIANDO OS UPLOADERS
     # directory "uploaders", "app/uploaders"
-    copy_file "app/uploaders/avatar_user_uploader.rb", "app/uploaders/avatar_user_uploader.rb"
+    copy_file "uploaders/avatar_user_uploader.rb", "app/uploaders/avatar_user_uploader.rb"
 
 
 
