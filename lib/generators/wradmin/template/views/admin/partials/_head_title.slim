@@ -19,23 +19,23 @@
                 i.fa.fa-clipboard
                 | Sair
 
-      ul.nav.top-menu.hidden-xs.notify-row.fadeInRightBig.animated
+      / ul.nav.top-menu.hidden-xs.notify-row.fadeInRightBig.animated
 
-        li#header_notification_bar.dropdown
-          a.dropdown-toggle data-toggle="dropdown" href="#"
-            i.fa.fa-bell-o
-            - if notifications.count > 0
-              span.badge.bg-warning = notifications.count
-          ul.dropdown-menu.extended.notification
-            .notify-arrow.notify-arrow-red
-            li
-              p.red Você tem #{notifications.count} Notificações
-            - notifications.each do |notification|
-              li
-                = link_to admin_contact_path(notification)
-                  span.label.label-warning
-                    i.fa.fa-exclamation-triangle
-                  |  Contato
-                  span.small.italic = " " + "há #{time_ago_in_words(notification.created_at)}"
+      /   li#header_notification_bar.dropdown
+      /     a.dropdown-toggle data-toggle="dropdown" href="#"
+      /       i.fa.fa-bell-o
+      /       - if notifications.count > 0
+      /         span.badge.bg-warning = notifications.count
+      /     ul.dropdown-menu.extended.notification
+      /       .notify-arrow.notify-arrow-red
+      /       li
+      /         p.red Você tem #{notifications.count} Notificações
+      /       - notifications.each do |notification|
+      /         li
+      /           = link_to admin_contact_path(notification)
+      /             span.label.label-warning
+      /               i.fa.fa-exclamation-triangle
+      /             |  Contato
+      /             span.small.italic = " " + "há #{time_ago_in_words(notification.created_at)}"
 
 
