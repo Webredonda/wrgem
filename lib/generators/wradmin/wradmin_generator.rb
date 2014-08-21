@@ -59,6 +59,7 @@ class WradminGenerator < Rails::Generators::Base
 
     # ADICIONANDO A ROTA
     route "
+  get 'admin' => 'admin#index'
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations', passwords: 'users/passwords' }
 
   get 'admin/users/new' => 'admin/users#new'
