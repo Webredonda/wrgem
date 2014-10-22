@@ -16,9 +16,7 @@ class WrstartGenerator < Rails::Generators::Base
     run "rake db:drop"
     run "rake db:create"
 
-    copy_file ".bowerrc", ".bowerrc"
-
-    # run "rails g start:bower"
+    run "rails g start:bower"
     run "rails g start:heroku"
     run "rails g start:heroku_wake_up"
     run "rails g start:locales"
