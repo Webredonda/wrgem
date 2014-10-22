@@ -24,19 +24,21 @@ class <%= controller_class_name %>Controller < ApplicationController
   def create
     @<%= singular_table_name %> = <%= orm_class.build(class_name, "#{singular_table_name}_params") %>
 
-    if @<%= orm_instance.save %>
-      redirect_to <%= plural_table_name %>_path, notice: 'Criado com sucesso.'
-    else
-      render action: 'new'
+    respond_to do |format|
+      if @<%= orm_instance.save %>
+        format.js
+      end
     end
+    flash[:notice] = 'Criado com sucesso.'
   end
 
   def update
-    if @<%= orm_instance.update("#{singular_table_name}_params") %>
-      redirect_to <%= plural_table_name %>_path, notice: 'Alterado com sucesso.'
-    else
-      render action: 'edit'
+    respond_to do |format|
+      if @<%= orm_instance.update("#{singular_table_name}_params") %>
+        format.js
+      end
     end
+    flash[:notice] = 'Editado com sucesso.'
   end
 
   def destroy
