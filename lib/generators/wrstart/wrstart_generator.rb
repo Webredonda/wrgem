@@ -43,8 +43,8 @@ class WrstartGenerator < Rails::Generators::Base
       "
     end
 
-    # remove_file "config/unicorn.rb"
-    # template "unicorn.rb", "config/unicorn.rb"
+    remove_file "config/unicorn.rb"
+    template "unicorn.rb", "config/unicorn.rb"
 
     remove_file "config/initializers/timeout.rb"
 

@@ -3,5 +3,7 @@ class CreateUser < ActiveRecord::Migration
     User.create :email => 'bschagas@webredonda.com.br', :password => '12345678', :name => 'Bruno', :surname => 'Chagas', :avatar => '', :birthday => '1984-01-11', :ocupation => 'Designer', :phone => '(61) 8198-0007', :autorization => true
 
     User.create :email => 'david@webredonda.com.br', :password => '12345678', :name => 'David', :surname => 'Leandro', :avatar => '', :birthday => '1992-01-21', :ocupation => 'Programmer', :phone => '(61) 9156-7945', :autorization => true
+
+    User.create :email => 'juliana@webredonda.com.br', :password => '12345678', :name => 'Juliana', :surname => 'Cid', :avatar => '', :birthday => '1990-10-12', :ocupation => 'Redactora', :phone => '(61) 9298-2027', :autorization => true
   end
 end

@@ -7,7 +7,7 @@ class WradminGenerator < Rails::Generators::Base
     # INSTALANDO AS GEMS
     run "rails generate devise:install"
     run "rails generate simple_form:install"
-    #run "rails generate redactor:install --devise"
+    run "rails generate redactor:install"
 
     # INCLUINDO ARQUIVOS DA PASTA LIB
     remove_dir "lib"
@@ -54,6 +54,8 @@ class WradminGenerator < Rails::Generators::Base
     # COPIANDO OS UPLOADERS
     # directory "uploaders", "app/uploaders"
     copy_file "uploaders/avatar_user_uploader.rb", "app/uploaders/avatar_user_uploader.rb"
+    copy_file "uploaders/redactor_rails_document_uploader.rb", "app/uploaders/redactor_rails_document_uploader.rb"
+    copy_file "uploaders/redactor_rails_picture_uploader.rb", "app/uploaders/redactor_rails_picture_uploader.rb"
 
 
 
