@@ -21,6 +21,7 @@ class WradminGenerator < Rails::Generators::Base
     # COPIANDO OS ASSETS (javascripts e  stylesheets)
     directory "assets/javascripts", "app/assets/javascripts"
     directory "assets/stylesheets", "app/assets/stylesheets"
+    directory "assets/images", "app/assets/images"
 
     # COPIANDO OS CONTROLLERS
     copy_file "controllers/admin_controller.rb", "app/controllers/admin_controller.rb"

@@ -13,9 +13,12 @@ class WrstartGenerator < Rails::Generators::Base
 
     remove_file "config/database.yml"
     template "database.yml", "config/database.yml"
+    run "rake db:drop"
     run "rake db:create"
 
-    run "rails g start:bower"
+    copy_file "template.bowerrc", ".bowerrc"
+
+    # run "rails g start:bower"
     run "rails g start:heroku"
     run "rails g start:heroku_wake_up"
     run "rails g start:locales"
@@ -29,6 +32,10 @@ class WrstartGenerator < Rails::Generators::Base
     config.i18n.default_locale = 'pt-BR'
     config.time_zone = 'Brasilia'
 
+    config.assets.precompile += %w(admin.js)
+    config.assets.precompile += %w(admin.css)
+    config.assets.precompile += %w(contato_mailer.css)
+
     config.generators do |g|
       g.assets            false
       g.helper            false
@@ -38,6 +45,13 @@ class WrstartGenerator < Rails::Generators::Base
       "
     end
 
+    # remove_file "config/unicorn.rb"
+    # template "unicorn.rb", "config/unicorn.rb"
+
+    remove_file "config/initializers/timeout.rb"
+
+    remove_file "config/initializers/heroku_wake_up.rb"
+    template "heroku_wake_up.rb", "config/initializers/heroku_wake_up.rb"
 
     copy_file "better_errors.rb", "config/initializers/better_errors.rb"
 

@@ -20,7 +20,7 @@ gem 'sass', '~> 3.4.0'
 gem 'sass-rails', '~> 4.0.1'
 # -------------------------------
 gem 'coffee-rails', '~> 4.0.1'
-gem 'font-awesome-sass', '~> 4.1.0'
+gem 'font-awesome-sass', '~> 4.2.0'
 
 # slim
 gem 'slim-rails', '~> 2.1.5'
@@ -98,6 +98,6 @@ gem 'mini_magick', '~> 3.7.0'
 gem 'carrierwave', '~> 0.10.0'
 gem 'fog', '~> 1.22.0'
 gem 'roadie', '~> 2.4.3'
-gem 'remotipart', '~> 1.2'
+gem 'remotipart', '~> 1.2.1'
 
 gem 'wrgem'
