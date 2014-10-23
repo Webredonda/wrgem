@@ -76,7 +76,9 @@ class WrstartGenerator < Rails::Generators::Base
     copy_file "index.html.slim", "app/views/home/index.html.slim"
 
     route "root 'home#index'"
+    route "get '/sitemap', to: redirect('https://s3-sa-east-1.amazonaws.com/PROJECT_NAME/sitemaps/sitemap.xml.gz')"
 
+    template "sitemap.rb", "config/sitemap.rb"
 
   end
 
