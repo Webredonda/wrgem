@@ -20,9 +20,6 @@
 #= require kalendar/kalendar
 #= require kalendar/edit-kalendar
 
-#= require validation/parsley.min
-#= require validation/demo-formvalidation
-
 #= require redactor-rails
 
 #= require bootstrap-datepicker/js/bootstrap-datepicker
