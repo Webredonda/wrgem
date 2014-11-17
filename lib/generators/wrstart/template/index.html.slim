@@ -4,12 +4,12 @@
 / - set_meta_tags :description => ''
 / - set_meta_tags :keywords => ''
 / - set_meta_tags :robots => 'index,follow'
-/ - set_meta_tags ':og:title' => 'Bem-vindo'
-/ - set_meta_tags ':og:url' => request.url
-/ - set_meta_tags ':og:image' => "#{root_url}#{asset_path('imagem.jpg')}"
-/ - set_meta_tags ':og:description' => ''
-/ - set_meta_tags ':og:email' => 'contato@webredonda.com.br'
-/ - set_meta_tags ':og:phone_number' => ''
+/ - set_meta_tags 'og:title' => 'Bem-vindo'
+/ - set_meta_tags 'og:url' => request.url
+/ - set_meta_tags 'og:image' => root_url + image_path('imagem.jpg')
+/ - set_meta_tags 'og:description' => ''
+/ - set_meta_tags 'og:email' => 'contato@webredonda.com.br'
+/ - set_meta_tags 'og:phone_number' => ''
 
 
 //-------- Classe usada na página --------//

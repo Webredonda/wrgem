@@ -33,6 +33,7 @@ class WrstartGenerator < Rails::Generators::Base
     config.assets.precompile += %w(admin.js)
     config.assets.precompile += %w(admin.css)
     config.assets.precompile += %w(contato_mailer.css)
+    config.assets.precompile += %w(logo.png)
 
     config.generators do |g|
       g.assets            false
