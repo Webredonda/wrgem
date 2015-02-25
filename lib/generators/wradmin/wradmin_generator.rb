@@ -45,7 +45,7 @@ class WradminGenerator < Rails::Generators::Base
     copy_file "models/user.rb", "app/models/user.rb"
 
     # ADICIONANDO CONFIGURACAO CARRIERWAVE
-    template "carrierwave.rb", "config/carrierwave.rb"
+    template "carrierwave.rb", "/config/initializers/carrierwave.rb"
 
     # COPIANDO AS IMAGENS DA PASTA PUBLIC
     directory "public/images", "public/images"
