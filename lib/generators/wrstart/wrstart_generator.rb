@@ -23,6 +23,8 @@ class WrstartGenerator < Rails::Generators::Base
     run "rails g start:spec_helpers"
     run "rails g start:unicorn"
 
+    copy_file ".bowerrc", ".bowerrc"
+
     application do
      "
     Rails.application.assets.register_engine('.slim', Slim::Template)

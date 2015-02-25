@@ -30,3 +30,8 @@
 # classlist.js (from vendor)
 # -------------------------------------
 #= require classList
+
+# -------------------------------------
+# sweetalert (from bower)
+# -------------------------------------
+#= require sweetalert/lib/sweet-alert

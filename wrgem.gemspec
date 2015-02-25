@@ -7,8 +7,8 @@ Gem::Specification.new do |spec|
   spec.name          = "wrgem"
   spec.version       = Wrgem::VERSION
   spec.authors       = ["davidleandro"]
-  spec.email         = ["david@webredonda.com.br"]
-  spec.summary       = %q{Framework utilizado pela webredonda}
+  spec.email         = ["david.leandro@grupogladium.com.br"]
+  spec.summary       = %q{Framework utilizado pelo Grupo Gladium}
   spec.description   = %q{Generators para startar projeto e criar admin}
   spec.homepage      = ""
 
