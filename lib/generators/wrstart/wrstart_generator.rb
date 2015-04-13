@@ -16,11 +16,11 @@ class WrstartGenerator < Rails::Generators::Base
     run "rake db:drop"
     run "rake db:create"
 
-    run "rails g start:bower"
+
     run "rails g start:heroku"
     run "rails g start:heroku_wake_up"
     run "rails g start:locales"
-    run "rails g start:spec_helpers"
+
     run "rails g start:unicorn"
 
     copy_file ".bowerrc", ".bowerrc"
@@ -83,6 +83,7 @@ class WrstartGenerator < Rails::Generators::Base
 
     template "sitemap.rb", "config/sitemap.rb"
 
+    run "bundle update"
   end
 
 end
