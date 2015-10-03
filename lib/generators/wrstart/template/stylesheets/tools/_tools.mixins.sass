@@ -1,8 +1,8 @@
-// **************************************
+// --------------------------------------
 //
 //   #tools.mixins
 //
-// **************************************
+// --------------------------------------
 
 
 // Apply ‘attention’ styles in one go.
@@ -22,6 +22,8 @@
 
 // Generate Helvetica Neue’s numbered font-weights from their aliases.
 =font-weight($font-weight)
+  @if $font-weight == "thin"
+    font-weight: 100
   @if $font-weight == "light"
     font-weight: 300
   @if $font-weight == "regular"
@@ -29,14 +31,9 @@
   @if $font-weight == "semibold"
     font-weight: 500
   @if $font-weight == "bold"
-    font-weight: 700
+    font-weight: 600
   @if $font-weight == "black"
     font-weight: 800
-
-=font-helvetica-condensed
-  font-family: 'HelveticaNeue-CondensedBold', 'Helvetica Neue', Helvetica, Arial, sans-serif
-  font-stretch: condensed
-  font-weight: 900
 
 
 // Create all specified heading styles in one go.
