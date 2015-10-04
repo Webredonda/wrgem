@@ -21,8 +21,6 @@ class WrstartGenerator < Rails::Generators::Base
     run "rails g start:heroku_wake_up"
     run "rails g start:locales"
 
-    run "rails g start:unicorn"
-
     copy_file ".bowerrc", ".bowerrc"
 
     application do
@@ -46,8 +44,8 @@ class WrstartGenerator < Rails::Generators::Base
       "
     end
 
-    remove_file "config/unicorn.rb"
-    template "unicorn.rb", "config/unicorn.rb"
+    remove_file "Procfile"
+    copy_file "Procfile"
 
     remove_file "config/initializers/timeout.rb"
 
